@@ -8,7 +8,7 @@ const signOut = () => {
 };
 function LogoutButton() {
   return (
-    <Button color='danger' onClick={signOut}>Sign Out</Button>
+    <Button color='danger' className='nav-btn' onClick={signOut}>Sign Out</Button>
   );
 }
 

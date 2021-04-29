@@ -30,8 +30,8 @@ const NavBar = ({ user }) => {
             <NavItem>
               <Link className="nav-link" to="/users/">Users</Link>
             </NavItem>
-            {user ? <LogoutButton /> : <LoginButton />}
           </Nav>
+          {user ? <LogoutButton/> : <LoginButton/>}
         </Collapse>
       </Navbar>
     </div>
