@@ -15,8 +15,7 @@ function App() {
     <>
       <Router>
         <NavBar setUser={setUser} user={user}/>
-        {user ? <h1>I am here as a man who uses</h1> : <h1>User is not here, try coming some again</h1>}
-        <Routes />
+        <Routes user={user}/>
       </Router>
     </>
   );

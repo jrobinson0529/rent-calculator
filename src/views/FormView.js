@@ -4,7 +4,7 @@ import RentForm from '../components/RentForm';
 function FormView() {
   return (
     <div>
-      <h1>RENT FORM</h1>
+      <h1 className='text-center'>RENT FORM</h1>
       <RentForm />
     </div>
   );
