@@ -9,7 +9,7 @@ const signIn = () => {
 };
 function LoginButton() {
   return (
-    <Button color='danger' className='nav-btn' onClick={signIn}>Sign in</Button>
+    <Button color='info' className='nav-btn' onClick={signIn}>Sign in</Button>
   );
 }
 

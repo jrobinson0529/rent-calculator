@@ -16,4 +16,9 @@ const postBills = (billsObject) => new Promise((resolve, reject) => {
     })
     .catch((error) => reject(error));
 });
-export { getBills, postBills };
+const getCurrentMonthBill = (currMonth) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/bills.json?orderBy="date"&equalTo="${currMonth}"`)
+    .then((response) => resolve(Object.values(response.data)[0]))
+    .catch((error) => reject(error));
+});
+export { getBills, postBills, getCurrentMonthBill };
