@@ -18,8 +18,8 @@ const NavBar = ({ user }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
+    <>
+      <Navbar color="dark" dark expand="md">
         <NavbarBrand href="/">Home</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -40,7 +40,7 @@ const NavBar = ({ user }) => {
           }
         </Collapse>
       </Navbar>
-    </div>
+    </>
   );
 };
 NavBar.propTypes = {

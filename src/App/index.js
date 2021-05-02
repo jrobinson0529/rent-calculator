@@ -32,13 +32,11 @@ function App() {
       setRentJesse(((response.electric + response.internet + response.water) / 4) + response.baseRent - response.electric);
     });
   }, []);
-  console.warn(rentAndy);
-  console.warn(rentJesse);
   return (
     <>
       <Router>
         <NavBar setUser={setUser} user={user}/>
-        <Routes user={user}/>
+        <Routes user={user} rentJesse={rentJesse} rentAndy={rentAndy}/>
       </Router>
     </>
   );

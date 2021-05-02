@@ -30,10 +30,9 @@ function RentForm() {
         setString('');
         postBills(bills);
       } else {
-        setString('Date already exists');
+        setString(`You have already input the bills for ${moment().format('MMM, YYYY')}`);
       }
     });
-    // setRentAndy((bills.water + bills.internet + bills.electric / 4) + bills.baseRent);
   };
   return (
     <div>
