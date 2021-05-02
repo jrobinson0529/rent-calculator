@@ -1,6 +1,9 @@
+@import '../styles/variables.scss';
+
 .App {
   padding: 10px;
   text-align: center;
+  background-color: $backgroundColorMain;
 }
 .nav-btn {
   margin-left: auto;
@@ -9,4 +12,21 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+.card-container {
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  .rent-card {
+    margin: 20px;
+    width: 10%;
+  }
+}
+.header-title {
+  background-color: $backgroundColorMain;
+  text-align: center;
+  font-size: 70px;
+  font-family: $mainFont;
+  margin-top: 5%;
 }

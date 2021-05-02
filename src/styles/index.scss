@@ -1,6 +1,15 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
-@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import '_variables.scss';
+@import '../App/App.scss';
 
+#root {
+  height: 100vh;
+  font-family: $mainFont;
+  color: white;
+  background-color: $backgroundColorMain;
+}
 body {
+  font-family: $mainFont;
   background-color: $favColor;
 }
