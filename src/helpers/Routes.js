@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../views/Home';
+import RentForm from '../components/RentForm';
 
 function About() {
   return <h2>About</h2>;
@@ -18,6 +19,7 @@ function Routes({ user, rentJesse, rentAndy }) {
         <Route exact path="/" component={() => <Home user={user} rentJesse={rentJesse} rentAndy={rentAndy}/>}/>
         <Route path="/about" component={About}/>
         <Route path="/users" component={Users}/>
+        <Route path="/rent-form" component={RentForm}/>
       </Switch>
     </>
   );

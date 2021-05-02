@@ -8,10 +8,22 @@
 .nav-btn {
   margin-left: auto;
 }
-.rent-form { 
+.rent-form {
+  margin-top: 10%;
+  border-radius: 10px;
+  border: white 2px solid;
+  padding: 20px;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  .form-group {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-info {
+    margin-left: 50%;
+  }
 }
 .card-container {
   margin: 20px;
@@ -22,6 +34,20 @@
     margin: 20px;
     width: 10%;
   }
+}
+.rent-form-button {
+  height: 50%;
+  width: 100%;
+}
+.rent-form-button-link {
+  height: 100%;
+  width: 50%;
+}
+.rent-form-button-container {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 .header-title {
   background-color: $backgroundColorMain;

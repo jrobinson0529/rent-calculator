@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import RentCard from '../components/RentCard';
 
@@ -17,6 +19,11 @@ function Home({ user, rentJesse, rentAndy }) {
                     <RentCard rent={rentAndy} name={'Andy'}/>
                     <RentCard rent={rentEric} name={'Eric'}/>
                 </div>}
+        { user
+        && <div className='rent-form-button-container'>
+            <Link to='/rent-form' className='rent-form-button-link'><Button color='info' className='rent-form-button'>Calculate Rent!</Button></Link>
+          </div>
+        }
     </>
   );
 }

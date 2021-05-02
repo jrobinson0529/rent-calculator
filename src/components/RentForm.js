@@ -36,6 +36,7 @@ function RentForm() {
   };
   return (
     <div>
+      <h1 className='text-center my-5'>Enter rent numbers for current month!</h1>
       <Form
         id='rentForm'
         onSubmit={handleSubmit}
@@ -47,8 +48,7 @@ function RentForm() {
             type='number'
             name='water'
             id='water'
-            onChange={handleInputChange}
-            value={bills.water}/>
+            onChange={handleInputChange}/>
         </FormGroup>
         <FormGroup>
         <Label for='electric'>Electric</Label>
@@ -56,8 +56,7 @@ function RentForm() {
             type='number'
             name='electric'
             id='electric'
-            onChange={handleInputChange}
-            value={bills.electric}/>
+            onChange={handleInputChange}/>
         </FormGroup>
         <FormGroup>
         <Label for='internet'>Internet</Label>
@@ -65,8 +64,7 @@ function RentForm() {
             type='number'
             name='internet'
             id='internet'
-            onChange={handleInputChange}
-            value={bills.internet}/>
+            onChange={handleInputChange}/>
         </FormGroup>
         <Button type='submit' color='info'>SUBMIT</Button>
       </Form>
