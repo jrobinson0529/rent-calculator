@@ -1,7 +1,10 @@
+// import moment from 'moment';
+import moment from 'moment';
 import React, { useState } from 'react';
 import {
-  Form, FormGroup, Input, Button
+  Form, FormGroup, Input, Button, Label
 } from 'reactstrap';
+import { getBills, postBills } from '../helpers/data/rentData';
 
 function RentForm() {
   const [bills, setBills] = useState({
@@ -9,18 +12,28 @@ function RentForm() {
     electric: 0,
     internet: 0,
     baseRent: 567,
+    date: moment().format('MM-YYYY'),
   });
-  const [rentAndy, setRentAndy] = useState(0);
+  const [string, setString] = useState('');
   const handleInputChange = (e) => {
     setBills((prevState) => ({
       ...prevState,
-      [e.target.name]: Number(e.target.value)
+      [e.target.name]: e.target.name !== 'date' ? Number(e.target.value) : e.target.value
     }));
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setRentAndy((bills.water + bills.internet + bills.electric / 4) + bills.baseRent);
-    console.warn(rentAndy);
+    getBills().then((response) => {
+      const arr = [...response];
+      const dateHere = arr.filter((object) => object.date.includes(moment().format('MM-YYYY')));
+      if (dateHere.length === 0) {
+        setString('');
+        postBills(bills);
+      } else {
+        setString('Date already exists');
+      }
+    });
+    // setRentAndy((bills.water + bills.internet + bills.electric / 4) + bills.baseRent);
   };
   return (
     <div>
@@ -30,6 +43,7 @@ function RentForm() {
         className='rent-form'
       >
         <FormGroup>
+          <Label for='water'>Water</Label>
           <Input
             type='number'
             name='water'
@@ -38,6 +52,7 @@ function RentForm() {
             value={bills.water}/>
         </FormGroup>
         <FormGroup>
+        <Label for='electric'>Electric</Label>
           <Input
             type='number'
             name='electric'
@@ -46,6 +61,7 @@ function RentForm() {
             value={bills.electric}/>
         </FormGroup>
         <FormGroup>
+        <Label for='internet'>Internet</Label>
           <Input
             type='number'
             name='internet'
@@ -54,8 +70,8 @@ function RentForm() {
             value={bills.internet}/>
         </FormGroup>
         <Button type='submit' color='info'>SUBMIT</Button>
-        {rentAndy}
       </Form>
+      <h1>{string}</h1>
     </div>
   );
 }

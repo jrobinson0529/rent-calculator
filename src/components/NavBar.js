@@ -31,7 +31,13 @@ const NavBar = ({ user }) => {
               <Link className="nav-link" to="/users/">Users</Link>
             </NavItem>
           </Nav>
-          {user ? <LogoutButton/> : <LoginButton/>}
+          {user !== null
+          && <div>
+            {
+              user ? <LogoutButton/> : <LoginButton/>
+            }
+          </div>
+          }
         </Collapse>
       </Navbar>
     </div>
